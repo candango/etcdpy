@@ -3,6 +3,7 @@
 
 import re
 
+from etcd3 import get_author, get_author_email, get_version
 from setuptools import setup
 
 with open('README.rst') as readme_file:
@@ -24,38 +25,36 @@ requirements = load_reqs('requirements/base.txt')
 test_requirements = load_reqs('requirements/test.txt')
 
 setup(
-    name='etcd3',
-    version='0.12.0',
-    description="Python client for the etcd3 API",
-    long_description=readme + '\n\n' + history,
-    author="Louis Taylor",
-    author_email='louis@kragniz.eu',
-    url='https://github.com/kragniz/python-etcd3',
+    name="etcdpy",
+    version=get_version(),
+    description="Python client for etcd",
+    long_description="This is a work in progress",
+    author=get_author(),
+    author_email=get_author_email(),
+    url="https://github.com/candango/etcdpy",
     packages=[
-        'etcd3',
-        'etcd3.etcdrpc',
+        "etcd3",
+        "etcd3.etcdrpc",
     ],
     package_dir={
-        'etcd3': 'etcd3',
-        'etcd3.etcdrpc': 'etcd3/etcdrpc',
+        'etcd3': "etcd3",
+        'etcd3.etcdrpc': "etcd3/etcdrpc",
     },
     include_package_data=True,
     install_requires=requirements,
     license="Apache Software License 2.0",
     zip_safe=False,
-    keywords='etcd3',
+    keywords="etcd3",
     classifiers=[
-        'Development Status :: 2 - Pre-Alpha',
-        'Intended Audience :: Developers',
-        'License :: OSI Approved :: Apache Software License',
-        'Natural Language :: English',
-        "Programming Language :: Python :: 2",
-        'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.4',
-        'Programming Language :: Python :: 3.5',
-        'Programming Language :: Python :: 3.6',
+        "Development Status :: 1 - Planning",
+        "Intended Audience :: Developers",
+        "License :: OSI Approved :: Apache Software License",
+        "Natural Language :: English",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.4",
+        "Programming Language :: Python :: 3.5",
+        "Programming Language :: Python :: 3.6",
     ],
-    test_suite='tests',
+    test_suite="tests",
     tests_require=test_requirements
 )
