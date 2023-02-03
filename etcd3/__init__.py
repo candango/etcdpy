@@ -1,7 +1,7 @@
 from __future__ import absolute_import
 
 __author__ = "Flavio Garcia <piraz@candango.org>"
-__version__ = (0, 0, 0, 1)
+__version__ = (0, 0, 0, 2)
 __licence__ = "Apache License V2.0"
 
 
